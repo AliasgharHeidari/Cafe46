@@ -1,114 +1,125 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>کافه ۴۶</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>کافه ۴۶</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>کافه ۴۶</header>
-<div class="address-phone">
-  شهر قدس، شهرک الهیه، بلوار باکری، کوچه شهید سنگری، پلاک ۴۶ | تلفن: 09195454047
-</div>
+  <header>کافه ۴۶</header>
+  <div class="address-phone">
+    شهر قدس، شهرک الهیه، بلوار باکری، کوچه شهید سنگری، پلاک ۴۶ | تلفن: 09195454047
+  </div>
 
-<div class="buttons" id="categoryButtons">
-  <button class="active" data-category="hot-drinks">نوشیدنی‌های گرم</button>
-  <button data-category="cold-drinks">نوشیدنی‌های سرد</button>
-  <button data-category="smoothies">اسموتی‌ها</button>
-  <button data-category="cakes">کیک‌ها</button>
-  <button data-category="balls">توپک‌ها</button>
-  <button data-category="magnum">مگنوم کیک</button>
-</div>
+  <div class="buttons" id="categoryButtons">
+    <button class="active" data-category="hot-drinks">نوشیدنی‌های گرم</button>
+    <button data-category="cold-drinks">نوشیدنی‌های سرد</button>
+    <button data-category="smoothies">اسموتی‌ها</button>
+    <button data-category="cakes">کیک‌ها</button>
+    <button data-category="balls">توپک‌ها</button>
+    <button data-category="magnum">مگنوم کیک</button>
+  </div>
 
-<div class="cards" id="cardsContainer">
-  <!-- کارت‌ها اینجا نمایش داده میشن -->
-</div>
+  <div class="cards" id="cardsContainer"></div>
 
-<script>
-  const data = {
-    "hot-drinks": [
-      { name: "اسپرسو", price: 60 },
-      { name: "آمریکانو", price: 80 },
-      { name: "لته", price: 100 },
-      { name: "کاپوچینو", price: 120 },
-      { name: "کارمل ماکیاتو", price: 120 },
-      { name: "موکا", price: 120 },
-      { name: "هات چاکلت", price: 90 },
-      { name: "قهوه", price: 80 },
-      { name: "ماچا", price: 170 },
-      { name: "چای سیاه", price: 100 },
-      { name: "چای سبز", price: 100 },
-      { name: "چای ماسالا", price: 80 },
-      { name: "چای کرک", price: 80 }
-    ],
-    "cold-drinks": [
-      { name: "آیس اسپرسو", price: 65 },
-      { name: "آیس آمریکانو", price: 80 },
-      { name: "آیس لته", price: 110 },
-      { name: "آیس کاپوچینو", price: 100 },
-      { name: "آیس کارامل ماکیاتو", price: 120 },
-      { name: "آیس موکا", price: 120 },
-      { name: "آیس ماچا", price: 180 },
-      { name: "موهیتو", price: 200 },
-      { name: "رد موهیتو (شاهتوت و زرشک نعنا)", price: 200 },
-      { name: "ماکتل شب", price: 200 }
-    ],
-    "smoothies": [
-      { name: "شیک شیرموز توت فرنگی", price: 300 },
-      { name: "شیک شیرموز انبه", price: 300 },
-      { name: "شیک شکلاتی", price: 300 },
-      { name: "اسموتی قهوه", price: 250 },
-      { name: "اسموتی توت فرنگی و کیک شکلاتی", price: 250 },
-      { name: "اسموتی موز انبه", price: 300 }
-    ],
-    "cakes": [
-      { name: "چیز کیک سن سباستین", price: 200 },
-      { name: "تیرامیسو کلاسیک", price: 150 },
-      { name: "پای سیب دارچین کرم دار", price: 150 },
-      { name: "چاکلت موس با کارامل دست ساز", price: 150 }
-    ],
-    "balls": [
-      { name: "براونی بالز (توپک برانی)", price: 30 },
-      { name: "کوکو بالز (توپک نارگیلی)", price: 30 }
-    ],
-    "magnum": [
-      { name: "مگنوم کیک", price: 120 }
-    ]
-  };
+  <!-- 🕒 ساعات کاری -->
+  <div class="opening-hours">
+    <h2>ساعات کاری</h2>
+    <ul>
+      <li>شنبه: ۷:۰۰ تا ۲۳:۰۰</li>
+      <li>یک‌شنبه: ۷:۰۰ تا ۲۳:۰۰</li>
+      <li>دوشنبه: ۷:۰۰ تا ۲۳:۰۰</li>
+      <li>سه‌شنبه: ۷:۰۰ تا ۲۳:۰۰</li>
+      <li>چهارشنبه: ۷:۰۰ تا ۲۳:۰۰</li>
+      <li>پنج‌شنبه: ۷:۰۰ تا ۲۳:۰۰</li>
+      <li>جمعه: ۹:۰۰ تا ۲۲:۰۰</li>
+    </ul>
+  </div>
 
-  const buttons = document.querySelectorAll("#categoryButtons button");
-  const cardsContainer = document.getElementById("cardsContainer");
+  <footer>
+    کافه ۴۶ - شهر قدس، شهرک الهیه، بلوار باکری، کوچه شهید سنگری، پلاک ۴۶ | تلفن: 09195454047
+  </footer>
 
-  function showCategory(category) {
-    cardsContainer.innerHTML = "";
-    data[category].forEach(item => {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.innerHTML = `
-        <div class="name">${item.name}</div>
-        <div class="price">${item.price.toLocaleString()} تومان</div>
-      `;
-      cardsContainer.appendChild(card);
+  <script>
+    const data = {
+      "hot-drinks": [
+        { name: "اسپرسو", price: 60 },
+        { name: "آمریکانو", price: 80 },
+        { name: "لته", price: 100 },
+        { name: "کاپوچینو", price: 120 },
+        { name: "کارمل ماکیاتو", price: 120 },
+        { name: "موکا", price: 120 },
+        { name: "هات چاکلت", price: 90 },
+        { name: "قهوه", price: 80 },
+        { name: "ماچا", price: 170 },
+        { name: "چای سیاه", price: 100 },
+        { name: "چای سبز", price: 100 },
+        { name: "چای ماسالا", price: 80 },
+        { name: "چای کرک", price: 80 }
+      ],
+      "cold-drinks": [
+        { name: "آیس اسپرسو", price: 65 },
+        { name: "آیس آمریکانو", price: 80 },
+        { name: "آیس لته", price: 110 },
+        { name: "آیس کاپوچینو", price: 100 },
+        { name: "آیس کارامل ماکیاتو", price: 120 },
+        { name: "آیس موکا", price: 120 },
+        { name: "آیس ماچا", price: 180 },
+        { name: "موهیتو", price: 200 },
+        { name: "رد موهیتو (شاهتوت و زرشک نعنا)", price: 200 },
+        { name: "ماکتل شب", price: 200 }
+      ],
+      "smoothies": [
+        { name: "شیک هاشیک", price: 300 },
+        { name: "شیرموز توت فرنگی", price: 300 },
+        { name: "شیک شیرموز انبه", price: 300 },
+        { name: "شیک شکلاتی", price: 300 },
+        { name: "اسموتی قهوه", price: 250 },
+        { name: "اسموتی توت فرنگی و کیک شکلاتی", price: 250 },
+        { name: "اسموتی موز انبه", price: 300 }
+      ],
+      "cakes": [
+        { name: "چیز کیک سن سباستین", price: 200 },
+        { name: "تیرامیسو کلاسیک", price: 150 },
+        { name: "پای سیب دارچین کرم دار", price: 150 },
+        { name: "چاکلت موس با کارامل دست ساز", price: 150 }
+      ],
+      "balls": [
+        { name: "براونی بالز (توپک برانی)", price: 30 },
+        { name: "کوکو بالز (توپک نارگیلی)", price: 30 }
+      ],
+      "magnum": [
+        { name: "مگنوم کیک", price: 120 }
+      ]
+    };
+
+    const buttons = document.querySelectorAll("#categoryButtons button");
+    const cardsContainer = document.getElementById("cardsContainer");
+
+    function showCategory(category) {
+      cardsContainer.innerHTML = "";
+      data[category].forEach(item => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="name">${item.name}</div>
+          <div class="price">${item.price.toLocaleString()} تومان</div>
+        `;
+        cardsContainer.appendChild(card);
+      });
+    }
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelector("#categoryButtons .active").classList.remove("active");
+        button.classList.add("active");
+        showCategory(button.getAttribute("data-category"));
+      });
     });
-  }
 
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
-      document.querySelector("#categoryButtons .active").classList.remove("active");
-      button.classList.add("active");
-      showCategory(button.getAttribute("data-category"));
-    });
-  });
-
-  // نمایش پیش‌فرض دسته نوشیدنی‌های گرم
-  showCategory("hot-drinks");
-</script>
-
-<footer>
-  کافه ۴۶ - شهر قدس، شهرک الهیه، بلوار باکری، کوچه شهید سنگری، پلاک ۴۶ | تلفن: 09195454047
-</footer>
-
+    showCategory("hot-drinks");
+  </script>
 </body>
 </html>
