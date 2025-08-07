@@ -118,6 +118,35 @@ header {
   color: #a97552;
 }
 
+.opening-hours {
+  background: #fff2e6;
+  color: #4a342e;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+  border-top: 2px dashed #a1785a;
+  border-bottom: 2px dashed #a1785a;
+}
+
+.opening-hours h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #5a3e36;
+  font-weight: 800;
+}
+
+.opening-hours ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.opening-hours li {
+  font-size: 1.1rem;
+  margin: 8px 0;
+  font-weight: 600;
+}
+
 footer {
   background: #5a3e36;
   color: #f0e6db;
