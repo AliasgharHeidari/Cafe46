@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,34 +7,101 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <h1>کافه ۴۶</h1>
+    <p>آدرس: شهر قدس، شهرک الهیه، بلوار باکری، کوچه شهید سنگری، پلاک ۴۶</p>
+    <p>شماره تماس: 09195454047</p>
+  </header>
+  <main>
+    <section class="menu">
+      <button onclick="filterMenu('hot')">نوشیدنی‌های گرم</button>
+      <button onclick="filterMenu('cold')">نوشیدنی‌های سرد</button>
+      <button onclick="filterMenu('shake')">شیک‌ها</button>
+      <button onclick="filterMenu('smoothie')">اسموتی‌ها</button>
+      <button onclick="filterMenu('cake')">کیک‌ها</button>
+      <button onclick="filterMenu('all')">همه</button>
 
-  <header>کافه ۴۶</header>
-  <div class="address-phone">
-    شهر قدس، شهرک الهیه، بلوار باکری، کوچه شهید سنگری، پلاک ۴۶ | تلفن: 09195454047
-  </div>
+      <div class="items" id="items">
+        <!-- نوشیدنی‌های گرم -->
+        <div class="card hot">اسپرسو - 60</div>
+        <div class="card hot">آمریکانو - 80</div>
+        <div class="card hot">لته - 100</div>
+        <div class="card hot">کاپوچینو - 120</div>
+        <div class="card hot">کارمل ماکیاتو - 120</div>
+        <div class="card hot">موکا - 120</div>
+        <div class="card hot">هات چاکلت - 90</div>
+        <div class="card hot">قهوه - 80</div>
+        <div class="card hot">ماچا - 170</div>
+        <div class="card hot">چای سیاه - 100</div>
+        <div class="card hot">چای سبز - 100</div>
+        <div class="card hot">چای ماسالا - 80</div>
+        <div class="card hot">چای کرک - 80</div>
 
-  <div class="buttons" id="categoryButtons">
-    <button class="active" data-category="hot-drinks">نوشیدنی‌های گرم</button>
-    <button data-category="cold-drinks">نوشیدنی‌های سرد</button>
-    <button data-category="smoothies">اسموتی‌ها</button>
-    <button data-category="cakes">کیک‌ها</button>
-    <button data-category="balls">توپک‌ها</button>
-    <button data-category="magnum">مگنوم کیک</button>
-  </div>
+        <!-- نوشیدنی‌های سرد -->
+        <div class="card cold">آیس اسپرسو - 65</div>
+        <div class="card cold">آیس آمریکانو - 80</div>
+        <div class="card cold">آیس لته - 110</div>
+        <div class="card cold">آیس کاپوچینو - 100</div>
+        <div class="card cold">آیس کارامل ماکیاتو - 120</div>
+        <div class="card cold">آیس موکا - 120</div>
+        <div class="card cold">آیس ماچا - 180</div>
+        <div class="card cold">موهیتو - 200</div>
+        <div class="card cold">رد موهیتو (شاهتوت و زرشک نعنا) - 200</div>
+        <div class="card cold">ماکتل شب - 200</div>
 
-  <div class="cards" id="cardsContainer"></div>
+        <!-- شیک‌ها -->
+        <div class="card shake">شیک شیرموز توت فرنگی - 300</div>
+        <div class="card shake">شیک شیرموز انبه - 300</div>
+        <div class="card shake">شیک شکلاتی - 300</div>
 
-  <!-- 🕒 ساعات کاری -->
-  <div class="opening-hours">
-    <h2>ساعات کاری</h2>
-    <ul>
-      <li>شنبه: ۷:۰۰ تا ۲۳:۰۰</li>
-      <li>یک‌شنبه: ۷:۰۰ تا ۲۳:۰۰</li>
-      <li>دوشنبه: ۷:۰۰ تا ۲۳:۰۰</li>
-      <li>سه‌شنبه: ۷:۰۰ تا ۲۳:۰۰</li>
-      <li>چهارشنبه: ۷:۰۰ تا ۲۳:۰۰</li>
-      <li>پنج‌شنبه: ۷:۰۰ تا ۲۳:۰۰</li>
-      <li>جمعه: ۹:۰۰ تا ۲۲:۰۰</li>
+        <!-- اسموتی‌ها -->
+        <div class="card smoothie">اسموتی قهوه - 250</div>
+        <div class="card smoothie">اسموتی توت فرنگی و کیک شکلاتی - 250</div>
+        <div class="card smoothie">اسموتی موز انبه - 300</div>
+
+        <!-- کیک‌ها -->
+        <div class="card cake">چیز کیک سن سباستین - 200</div>
+        <div class="card cake">تیرامیسو کلاسیک - 150</div>
+        <div class="card cake">پای سیب دارچین کرم دار - 150</div>
+        <div class="card cake">چاکلت موس با کارامل دست ساز - 150</div>
+        <div class="card cake">براونی بالز (توپک برانی) - 30</div>
+        <div class="card cake">کوکو بالز (توپک نارگیلی) - 30</div>
+        <div class="card cake">مگنوم کیک - 120</div>
+      </div>
+    </section>
+
+    <section class="opening-hours">
+      <h2>ساعت کاری</h2>
+      <ul>
+        <li>شنبه: 7:00 تا 23:00</li>
+        <li>یکشنبه: 7:00 تا 23:00</li>
+        <li>دوشنبه: 7:00 تا 23:00</li>
+        <li>سه‌شنبه: 7:00 تا 23:00</li>
+        <li>چهارشنبه: 7:00 تا 23:00</li>
+        <li>پنج‌شنبه: 7:00 تا 23:00</li>
+        <li>جمعه: 9:00 تا 22:00</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    function filterMenu(category) {
+      const items = document.querySelectorAll('.card');
+      if (category === 'all') {
+        items.forEach(item => item.style.display = 'block');
+        return;
+      }
+      items.forEach(item => {
+        if (item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>      <li>جمعه: ۹:۰۰ تا ۲۲:۰۰</li>
     </ul>
   </div>
 
